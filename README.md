@@ -11,4 +11,4 @@ Nowaday, it is not hard to draw digram in HTML5 via SVG. I am seeking a way to d
 
 There are some built in tags allow us to draft shapes and their connections. Please see my [Basic SVG].
 
-[Basic SVG]: (doc/basic-shapes-connections.html)
+[Basic SVG]: <doc/basic-shapes-connections.html>
