@@ -2,6 +2,95 @@
 <html lang="en">
     <head>
         <title>Basic shapes and their connections</title>
+		<style>
+.tab button {
+	display: none;
+}
+.tab button.active {
+	display: block;
+}
+
+.tab-content svg {
+	background-color: #fff;
+	width: calc(100% - 1rem);
+	height: 16rem;
+	margin: .5rem;
+}
+
+rect.trsFrame {
+	fill:none;
+	stroke: blue;
+	stroke-width: .1rem;
+	rx: .5rem;
+	ry: .5rem;
+}
+rect.trsTitle {
+	fill:#0000ff;
+	stroke: blue;
+	stroke-width: .1rem;
+	rx: .5rem;
+	ry: .5rem;
+	height: 3rem;
+}
+text.trsTitle {
+	fill: #fff;
+	font-size: 1rem;
+}
+rect.trsContent {
+	fill:#fff;
+}
+line.trsDivider {
+	stroke: blue;
+	stroke-width: .1rem;
+	stroke-linecap: round;
+	stroke-dasharray: 1, 5;
+}
+circle.trsConnect {
+	fill: blue;
+	stroke: blue;
+	stroke-width: .1rem;
+	r: .3rem;
+	cursor: grabbing;
+}
+
+circle.trsConnect:hover {
+	fill: red !important;
+}
+
+text.trsConnect {
+	fill: #000;
+	font-size: 1rem;
+}
+
+line.connector {
+	stroke: blue;
+	stroke-width: .1rem;
+}
+
+line.connector:hover {
+	stroke: rgb(3,94,252);
+	cursor: grabbing;
+}
+
+g:hover rect.trsFrame {
+	stroke: rgb(3,94,252);
+	stroke-width: .1rem;
+}
+
+g:hover rect.trsTitle {
+	stroke: rgb(3,94,252);
+	fill:  rgb(3,94,252);
+}
+
+g:hover circle.trsConnect {
+	stroke: rgb(3,94,252);
+	fill: rgb(3,94,252); 
+}
+
+g:hover line.trsDivider {
+	stroke: rgb(3,94,252);
+}
+		</style>
 		<link href='./static-style.css' rel='stylesheet'>
     </head>
     <body>
@@ -16,27 +105,32 @@
 			    <button class="active">SVG</button>
 				<div class="tab-content">
 					<svg>
-						<text x="10" y="20" style="font-size:14px;">Your browser support SVG.</text>
 						Sorry, your browser does not support SVG
+						<text x="10" y="20" style="font-size:14px;">Your browser support SVG.</text>
+						<line x1="0" x2="101" y1="95" y2="95" class="connector" />
+						<line x1="0" x2="101" y1="125" y2="125" class="connector" />
+						<line x1="302" x2="400" y1="160" y2="160" class="connector" />
+						<g>
+							<circle cx="98" cy="95" class="trsConnect" />
+							<circle cx="98" cy="125" class="trsConnect" />
+							<circle cx="302" cy="160" class="trsConnect" />
+							<rect fill="blue" x="100" y="50" width="200" class="trsTitle" />
+							<text x="165" y="72" class="trsTitle">Transfer 1</text>
+							<rect x="101" y="80" height="90" width="198" class="trsContent"></rect>
+							<line x1="101" x2="299" y1="110" y2="110" class="trsDivider" />
+							<line x1="101" x2="299" y1="140" y2="140" class="trsDivider" />
+							<text x="101" y="100" class="trsConnect">Input 1</text>
+							<text x="101" y="130" class="trsConnect">Input 2</text>
+							<text x="248" y="165" class="trsConnect">Output</text>
+							<rect x="100" y="50" height="130" width="200" class="trsFrame">
+								<title>Transfer 1</title>
+							</rect>
+						</g>
 					</svg>
 				</div>
 				<button>Code</button>
 				<div class="tab-content">
-				    Code
-				</div>
-			</div>
-		</section>
-		<section id="svg-file">
-            <h2>SVG Files</h2>
-			<p>Code in SVG file</p>
-			<div class="tab">
-				<button class="active">SVG</button>
-				<div class="tab-content">
-				    Demo
-				</div>
-				<button>Code</button>
-				<div class="tab-content">
-				    Code
+				    <pre />
 				</div>
 			</div>
 		</section>

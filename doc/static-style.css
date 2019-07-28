@@ -10,25 +10,20 @@ body h2 {
     font-size: 1.8rem;
 }
 
-.tab-content svg {
-	background-color: #fff;
-	width: calc(100% - 1rem);
-	height: 12rem;
-	margin: .5rem;
-}
-
 /* Style the tab */
 .tab {
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
-  height: 17rem;
+  height: 22rem;
   width: 100%;
   position: relative;
+  overflow: auto;
 }
 
 /* Style the buttons that are used to open the tab content */
 .tab button {
+	display: block;
   background-color: inherit;
   float: left;
   border: none;
