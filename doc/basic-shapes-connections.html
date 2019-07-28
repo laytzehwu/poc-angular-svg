@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Basic shapes and their connections</title>
+		<link href='./static-style.css' rel='stylesheet'>
+    </head>
+    <body>
+        <header>
+            <h1>Basic shapes and their connections</h1>
+			<p>Some entry level of SVG shapes ... ...</p>
+        </header>
+        <section id="inline-svg">
+            <h2>Inline SVG</h2>
+			<p>Direct code inside HTML</p>
+			<div class="tab">
+			    <button class="active">SVG</button>
+				<div class="tab-content">
+					<svg>
+						<text x="10" y="20" style="font-size:14px;">Your browser support SVG.</text>
+						Sorry, your browser does not support SVG
+					</svg>
+				</div>
+				<button>Code</button>
+				<div class="tab-content">
+				    Code
+				</div>
+			</div>
+		</section>
+		<section id="svg-file">
+            <h2>SVG Files</h2>
+			<p>Code in SVG file</p>
+			<div class="tab">
+				<button class="active">SVG</button>
+				<div class="tab-content">
+				    Demo
+				</div>
+				<button>Code</button>
+				<div class="tab-content">
+				    Code
+				</div>
+			</div>
+		</section>
+    </body>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<script src="./static.js"></script>
+</html>

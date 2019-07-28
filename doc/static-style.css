@@ -1,0 +1,68 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
+body {
+    font-size: 12px;
+    font-family: 'Roboto';
+}
+body h1 {
+    font-size: 2rem;
+}
+body h2 {
+    font-size: 1.8rem;
+}
+
+.tab-content svg {
+	background-color: #fff;
+	width: calc(100% - 1rem);
+	height: 12rem;
+	margin: .5rem;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  height: 17rem;
+  width: 100%;
+  position: relative;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  height: 3rem;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tab-content {
+  display: none;
+  padding: 6px 0;
+  border: 1px solid #ccc;
+  border-top: none;
+  height: 13rem;
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  width: 100%;
+  border: none;
+}
+
+.tab button.active + .tab-content {
+	display: block;
+}
