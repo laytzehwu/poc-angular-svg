@@ -1,0 +1,29 @@
+@import '../sass/variables';
+
+header, footer {
+    color: $panel-link-color;
+    a, a:visited {
+        color: $panel-link-color;
+        margin: 0 .1rem;
+        padding: .2rem 1rem;
+        border-top-left-radius: .5rem;
+    }
+
+    a:hover {
+        background-color: lighten($panel-color, 10%);
+    }
+
+    a.active {
+        background-color: $content-color;
+    }
+}
+
+section {
+    height: calc(100% - 4rem);
+}
+
+@media only screen and (min-width: 1024px) {
+    section {
+        height: calc(100% - 6rem);
+    }
+}
