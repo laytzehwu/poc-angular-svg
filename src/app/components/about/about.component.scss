@@ -1,0 +1,80 @@
+.tab-content svg {
+	background-color: #fff;
+	width: calc(100% - 1rem);
+	height: 16rem;
+	margin: .5rem;
+}
+
+rect.trsFrame {
+	fill:none;
+	stroke: blue;
+	stroke-width: .1rem;
+	rx: .5rem;
+	ry: .5rem;
+}
+rect.trsTitle {
+	fill:#0000ff;
+	stroke: blue;
+	stroke-width: .1rem;
+	rx: .5rem;
+	ry: .5rem;
+	height: 3rem;
+}
+text.trsTitle {
+	fill: #fff;
+	font-size: 1rem;
+}
+rect.trsContent {
+	fill:#fff;
+}
+line.trsDivider {
+	stroke: blue;
+	stroke-width: .1rem;
+	stroke-linecap: round;
+	stroke-dasharray: 1, 5;
+}
+circle.trsConnect {
+	fill: blue;
+	stroke: blue;
+	stroke-width: .1rem;
+	r: .3rem;
+	cursor: grabbing;
+}
+
+circle.trsConnect:hover {
+	fill: red !important;
+}
+
+text.trsConnect {
+	fill: #000;
+	font-size: 1rem;
+}
+
+line.connector {
+	stroke: blue;
+	stroke-width: .1rem;
+}
+
+line.connector:hover {
+	stroke: rgb(3,94,252);
+	cursor: grabbing;
+}
+
+g:hover rect.trsFrame {
+	stroke: rgb(3,94,252);
+	stroke-width: .1rem;
+}
+
+g:hover rect.trsTitle {
+	stroke: rgb(3,94,252);
+	fill:  rgb(3,94,252);
+}
+
+g:hover circle.trsConnect {
+	stroke: rgb(3,94,252);
+	fill: rgb(3,94,252); 
+}
+
+g:hover line.trsDivider {
+	stroke: rgb(3,94,252);
+}

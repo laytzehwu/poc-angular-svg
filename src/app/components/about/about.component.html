@@ -1,1 +1,27 @@
-<h1>Thank you of visiting this prototype</h1>
+<h1>Prototype for SVG</h1>
+<p>Thank you of running this application. I would like to have PoC of having below SVG editable in Angular application:</p>
+<div class="tab-content">
+    <svg>
+        Sorry, your browser does not support SVG
+        <text x="10" y="20" style="font-size:14px;">Your browser support SVG.</text>
+        <line x1="0" x2="101" y1="95" y2="95" class="connector" />
+        <line x1="0" x2="101" y1="125" y2="125" class="connector" />
+        <line x1="302" x2="400" y1="160" y2="160" class="connector" />
+        <g>
+            <circle cx="98" cy="95" class="trsConnect" />
+            <circle cx="98" cy="125" class="trsConnect" />
+            <circle cx="302" cy="160" class="trsConnect" />
+            <rect fill="blue" x="100" y="50" width="200" class="trsTitle" />
+            <text x="165" y="72" class="trsTitle">Node 1</text>
+            <rect x="101" y="80" height="90" width="198" class="trsContent"></rect>
+            <line x1="101" x2="299" y1="110" y2="110" class="trsDivider" />
+            <line x1="101" x2="299" y1="140" y2="140" class="trsDivider" />
+            <text x="101" y="100" class="trsConnect">In 1</text>
+            <text x="101" y="130" class="trsConnect">In 2</text>
+            <text x="248" y="165" class="trsConnect">Out</text>
+            <rect x="100" y="50" height="130" width="200" class="trsFrame">
+                <title>Node 1</title>
+            </rect>
+        </g>
+    </svg>
+</div>
