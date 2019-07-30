@@ -1,0 +1,89 @@
+[
+    {
+        "id": 1,
+        "name": "Diagram 1",
+        "diagram": {
+            "nodes": [],
+            "edges": []
+        }
+    },{
+        "id": 2,
+        "name": "Diagram 2",
+        "diagram": {
+            "nodes": [{
+                "id": 1,
+                "type": "Numeric Source",
+                "name": "Source01"
+            },{
+                "id": 2,
+                "type": "Numeric Source",
+                "name": "Source02"
+            },{
+                "id": 3,
+                "type": "String Output",
+                "name": "Output"
+            },{
+                "id": 4,
+                "type": "Add",
+                "name": "Add01",
+                "boxedNodes": [{
+                    "id": 6,
+                    "type": "Numeric Input",
+                    "name": "X",
+                    "isInput": true,
+                    "isOutput": false
+                },{
+                    "id": 7,
+                    "type": "Numeric Input",
+                    "name": "Y",
+                    "isInput": true,
+                    "isOutput": false
+                },{
+                    "id": 8,
+                    "type": "Numeric Output",
+                    "name": "Z",
+                    "isInput": false,
+                    "isOutput": true
+                }]
+            },{
+                "id": 5,
+                "type": "To String",
+                "name": "Format sum",
+                "boxedNodes": [{
+                    "id": 9,
+                    "type": "Numeric Input",
+                    "name": "Sum",
+                    "isInput": true,
+                    "isOutput": false
+                }, {
+                    "id": 10,
+                    "type": "String Output",
+                    "name": "Formatted sum",
+                    "isInput": false,
+                    "isOutput": true
+                }]
+            }],
+            "edges": [{
+                "id": 1,
+                "startNode": 1,
+                "endNode": 6,
+                "path": []
+            },{
+                "id": 2,
+                "startNode": 2,
+                "endNode": 7,
+                "path": []
+            },{
+                "id": 3,
+                "startNode": 8,
+                "endNode": 9,
+                "path": []
+            },{
+                "id": 4,
+                "startNode": 10,
+                "endNode": 3,
+                "path": []
+            }]
+        }
+    }
+]
