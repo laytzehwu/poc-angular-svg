@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DiagramService } from '@services/diagram.service';
+import { Diagram } from '@services/diagram';
 
 @Component({
   selector: 'app-diagram-list',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiagramListComponent implements OnInit {
 
-  constructor() { }
+    diagrams: Diagram[];
 
-  ngOnInit() {
-  }
+    constructor(private service: DiagramService) { }
+
+    ngOnInit() {
+        this.service.getAllDiagrams().subscribe(diagrams => {
+            this.diagrams = diagrams;
+        });
+    }
 
 }

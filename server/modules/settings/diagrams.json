@@ -1,0 +1,12 @@
+{
+    "default": {
+        "diagram": {
+            "height": 600,
+            "width": 800
+        },
+        "node": {
+            "width": 80,
+            "marginWidth": 30
+        }
+    }
+}

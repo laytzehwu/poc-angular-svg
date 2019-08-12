@@ -1,5 +1,9 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { DiagramsSettingsService } from '@settings/diagrams.settings.service';
+import { IDiagramSettings } from '@settings/IDiagramSettings';
+import { DiagramService } from '@services/diagram.service';
+import { DiagramDetail } from '@services/diagram';
 
 @Component({
     selector: 'app-diagram',
@@ -9,22 +13,33 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class DiagramComponent implements OnInit {
 
     id: number;
+    settings: IDiagramSettings;
+    diagram: DiagramDetail;
 
     constructor(
         private route: ActivatedRoute,
-        private router: Router
+        private router: Router,
+        private settingService: DiagramsSettingsService,
+        private service: DiagramService
     ) { 
     }
 
     ngOnInit() {
         this.route.paramMap.subscribe(params => {
-            this.loadDiagram(parseInt(params.get('id')));
+            const diagramId: number = parseInt(params.get('id'));
+            this.settingService.getSettings().subscribe(settings => {
+                this.settings = settings;
+                this.loadDiagram(diagramId);
+            });
           });
     }
 
     loadDiagram(id: number) {
-        // TODO: make a rest call a return diagram module here
-        this.id = id;
+        this.service.getDiagram(id).subscribe( d => {
+            this.id = id;
+            this.diagram = d;
+            console.log(this.diagram);
+        });
     }
 
 }
