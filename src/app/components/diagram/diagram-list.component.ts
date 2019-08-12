@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DiagramService } from '@services/diagram.service';
-import { Diagram } from '@services/diagram';
+import { DiagramService, Diagram } from '@services/diagrams';
 
 @Component({
   selector: 'app-diagram-list',

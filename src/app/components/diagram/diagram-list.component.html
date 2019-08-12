@@ -1,6 +1,6 @@
 <h2>Available diagrams</h2>
 <ul>
     <li *ngFor="let d of diagrams">
-        <a routerLink="/diagram/{{d.id}}">{{d.name}}</a>
+        <a [routerLink]="['/diagram/',d.id]">{{d.name}}</a>
     </li>
 </ul>

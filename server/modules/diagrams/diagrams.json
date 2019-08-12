@@ -12,34 +12,41 @@
         "diagram": {
             "nodes": [{
                 "id": 1,
+                "uuid": "debee0b0-641e-49ce-b331-38871be08c95",
                 "type": "Numeric Source",
                 "name": "Source01"
             },{
                 "id": 2,
+                "uuid": "0a9de6fd-37f8-4ed3-9bb7-68e15166fac1",
                 "type": "Numeric Source",
                 "name": "Source02"
             },{
                 "id": 3,
+                "uuid": "ddaf941c-7f4e-462f-b540-c20bf65b8839",
                 "type": "String Output",
                 "name": "Output"
             },{
                 "id": 4,
+                "uuid": "76faa3a7-1219-48d6-a8e8-d58b04187ed7",
                 "type": "Add",
                 "name": "Add01",
                 "boxedNodes": [{
                     "id": 6,
+                    "uuid": "2da6481a-53e1-4d18-8df7-39372d5cb907",
                     "type": "Numeric Input",
                     "name": "X",
                     "isInput": true,
                     "isOutput": false
                 },{
                     "id": 7,
+                    "uuid": "245ee46c-e322-4efa-b38f-f305aba780f3",
                     "type": "Numeric Input",
                     "name": "Y",
                     "isInput": true,
                     "isOutput": false
                 },{
                     "id": 8,
+                    "uuid": "3ab5073f-4d20-4811-bc33-231a2838fe4c",
                     "type": "Numeric Output",
                     "name": "Z",
                     "isInput": false,
@@ -47,16 +54,19 @@
                 }]
             },{
                 "id": 5,
+                "uuid": "6eb3e03e-1d2b-4d8e-93ff-4fadcadcefbc",
                 "type": "To String",
                 "name": "Format sum",
                 "boxedNodes": [{
                     "id": 9,
+                    "uuid": "ca7573ad-db27-48a2-8d0c-9ae6d96ec215",
                     "type": "Numeric Input",
                     "name": "Sum",
                     "isInput": true,
                     "isOutput": false
                 }, {
                     "id": 10,
+                    "uuid": "5b5dcbc7-dcd1-4a43-961f-e41ce7444089",
                     "type": "String Output",
                     "name": "Formatted sum",
                     "isInput": false,
@@ -65,24 +75,20 @@
             }],
             "edges": [{
                 "id": 1,
-                "startNode": 1,
-                "endNode": 6,
-                "path": []
+                "start": "debee0b0-641e-49ce-b331-38871be08c95",
+                "end": "2da6481a-53e1-4d18-8df7-39372d5cb907"
             },{
                 "id": 2,
-                "startNode": 2,
-                "endNode": 7,
-                "path": []
+                "start": "0a9de6fd-37f8-4ed3-9bb7-68e15166fac1",
+                "end": "245ee46c-e322-4efa-b38f-f305aba780f3"
             },{
                 "id": 3,
-                "startNode": 8,
-                "endNode": 9,
-                "path": []
+                "start": "3ab5073f-4d20-4811-bc33-231a2838fe4c",
+                "end": "ca7573ad-db27-48a2-8d0c-9ae6d96ec215"
             },{
                 "id": 4,
-                "startNode": 10,
-                "endNode": 3,
-                "path": []
+                "start": "5b5dcbc7-dcd1-4a43-961f-e41ce7444089",
+                "end": "ddaf941c-7f4e-462f-b540-c20bf65b8839"
             }]
         }
     }

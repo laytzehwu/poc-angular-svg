@@ -2,8 +2,7 @@ import { Component, OnInit, Output } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DiagramsSettingsService } from '@settings/diagrams.settings.service';
 import { IDiagramSettings } from '@settings/IDiagramSettings';
-import { DiagramService } from '@services/diagram.service';
-import { DiagramDetail } from '@services/diagram';
+import { DiagramService, DiagramDetail } from '@services/diagrams';
 
 @Component({
     selector: 'app-diagram',

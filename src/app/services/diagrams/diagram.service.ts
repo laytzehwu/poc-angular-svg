@@ -4,13 +4,14 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from '@environment';
 import { Diagram, DiagramDetail } from './diagram';
+import { DiagramMapper } from './diagram.mapper';
 
 @Injectable({
     providedIn: 'root'
 })
 export class DiagramService {
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private mapper: DiagramMapper) { }
 
     getAllDiagrams(): Observable<Diagram[]> {
         const endPoint : string = environment.api + 'diagrams';
@@ -24,7 +25,11 @@ export class DiagramService {
     getDiagram(id: number): Observable<DiagramDetail> {
         const endPoint : string = environment.api + 'diagram/' + id;
         return this.http.get<DiagramDetail>(endPoint).pipe(
-            map(payload => new DiagramDetail(payload))
+            map(payload => {
+                const detail = new DiagramDetail(payload);
+                this.mapper.mappDiagram(detail);
+                return detail;
+            })
         ) as Observable<DiagramDetail>;
     }
 }
