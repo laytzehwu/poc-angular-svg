@@ -6,15 +6,24 @@ import { DiagramDetail, INode } from './diagram';
 })
 export class DiagramMapper {
     
+
+    private findMatchedUuidNode(nodes: Array<INode>, uuid: string): INode {
+        return nodes.find(node => node.uuid == uuid);
+    }
+
     findNodeFromDiagram(diagram: DiagramDetail, uuid: string): INode {
         let matchedNode: INode;
-        matchedNode = diagram.nodes.find(node => node.uuid == uuid);
-        if (matchedNode) {
-            return matchedNode;
+        if (diagram.nodes) {
+            let nodes: Array<INode> = diagram.nodes;
+            matchedNode = this.findMatchedUuidNode(nodes, uuid);
+            if (matchedNode) {
+                return matchedNode;
+            }
+            nodes = [].concat(
+                ...diagram.nodes.filter(node => node.boxedNodes).map(node => node.boxedNodes)
+            );
+            matchedNode = this.findMatchedUuidNode(nodes, uuid);
         }
-        matchedNode = [].concat(
-            ...diagram.nodes.filter(node => node.boxedNodes).map(node => node.boxedNodes)
-        ).find(node => node.uuid == uuid);
         return matchedNode;
     }
 

@@ -5,6 +5,7 @@
     "paths": {
       "@environment": ["environments/environment"],
       "@settings/*": ["app/services/settings/*"],
+      "@components*": ["app/components*"],
       "@services*": ["app/services*"]
     },
     "outDir": "./dist/out-tsc",

@@ -65,11 +65,15 @@ export class DiagramDetail extends Diagram {
     nodes: DiagramNode[];
     constructor(row: any) {
         super(row);
-        if (row.diagram.edges) {
-            this.edges = row.diagram.edges.map(source => new Edge(source));
-        }
-        if(row.diagram.nodes) {
-            this.nodes = row.diagram.nodes.map(source => new DiagramNode(source));
+        if (row.diagram) {
+            if (row.diagram.edges) {
+                this.edges = row.diagram.edges.map(source => new Edge(source));
+            }
+            if(row.diagram.nodes) {
+                this.nodes = row.diagram.nodes.map(source => new DiagramNode(source));
+            }
+        } else {
+            throw new Error('Missing diagram');
         }
     }
 }
