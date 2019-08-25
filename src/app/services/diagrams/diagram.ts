@@ -1,3 +1,5 @@
+import { DiagramSketch } from '@services/sketch';
+
 export class Diagram {
     id: number;
     name: string;
@@ -63,6 +65,7 @@ export class DiagramNode extends Node implements INode {
 export class DiagramDetail extends Diagram {
     edges: Edge[];
     nodes: DiagramNode[];
+    sketch: DiagramSketch;
     constructor(row: any) {
         super(row);
         if (row.diagram) {
