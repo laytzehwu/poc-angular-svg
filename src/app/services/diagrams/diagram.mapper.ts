@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { DiagramDetail, INode } from './diagram';
+import { SketchLoaderService, SketchRenderService } from '@services/sketch';
 
 @Injectable({
     providedIn: 'root'
 })
 export class DiagramMapper {
     
+    constructor(private sketchLoad: SketchLoaderService, private render: SketchRenderService) {}
 
     private findMatchedUuidNode(nodes: Array<INode>, uuid: string): INode {
         return nodes.find(node => node.uuid == uuid);
@@ -49,5 +51,9 @@ export class DiagramMapper {
     
     mappDiagram(diagram: DiagramDetail) {
         this.mappEdgesNodes(diagram);
+        if (!this.sketchLoad.isSketchLoaded(diagram)) {
+            console.info('Diagram sketch has not loaded!');
+            this.render.renderDiagram(diagram);
+        }
     }
 }

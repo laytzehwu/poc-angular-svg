@@ -69,9 +69,8 @@ export class DiagramDetail extends Diagram {
     constructor(row: any) {
         super(row);
         if (row.diagram) {
-            if (row.diagram.edges) {
-                this.edges = row.diagram.edges.map(source => new Edge(source));
-            }
+            this.edges = row.diagram.edges ? 
+                row.diagram.edges.map(source => new Edge(source)) : [];
             if(row.diagram.nodes) {
                 this.nodes = row.diagram.nodes.map(source => new DiagramNode(source));
             }
