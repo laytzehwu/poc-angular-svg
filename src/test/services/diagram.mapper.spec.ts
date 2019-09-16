@@ -1,4 +1,5 @@
 import { TestBed, async } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { DiagramMapper } from '@services/diagrams/diagram.mapper';
 import { DiagramDetail, INode } from '@services/diagrams';
 import { SketchLoaderService, SketchRenderService } from '@services/sketch';
@@ -7,7 +8,9 @@ describe('DiagramMapper', () => {
     let sketchLoader: SketchLoaderService;
     let render: SketchRenderService;
 
-    beforeEach(() => TestBed.configureTestingModule({}));
+    beforeEach(() => TestBed.configureTestingModule({imports: [
+        HttpClientTestingModule
+    ]}));
     beforeEach(() => {
         sketchLoader = TestBed.get(SketchLoaderService);
         render = TestBed.get(SketchRenderService);

@@ -28,6 +28,7 @@ export class DiagramComponent implements OnInit {
             const diagramId: number = parseInt(params.get('id'));
             this.settingService.getSettings().subscribe(settings => {
                 this.settings = settings;
+                console.log(settings);
                 this.loadDiagram(diagramId);
             });
           });
