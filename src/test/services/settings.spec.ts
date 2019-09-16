@@ -16,6 +16,8 @@ describe('SettingModels', () => {
         const settings = new SettingModels({});
         expect(settings.default.node.width).toBe(80);
         expect(settings.default.node.marginWidth).toBe(30);
+        expect(settings.default.node.height).toBe(120);
+        expect(settings.default.node.marginHeight).toBe(45);
     });
 
     it('can load from payload', () => {
@@ -27,7 +29,9 @@ describe('SettingModels', () => {
                 },
                 node: {
                     width: 100,
-                    marginWidth: 80
+                    marginWidth: 80,
+                    height: 150,
+                    marginHeight: 120
                 }
             }
         });
@@ -35,5 +39,7 @@ describe('SettingModels', () => {
         expect(settings.default.diagram.width).toBe(1024);
         expect(settings.default.node.width).toBe(100);
         expect(settings.default.node.marginWidth).toBe(80);
+        expect(settings.default.node.height).toBe(150);
+        expect(settings.default.node.marginHeight).toBe(120);
     });
 });

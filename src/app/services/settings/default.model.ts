@@ -9,10 +9,14 @@ class DigramDefault {
 
 class NodeDefault {
     width: number;
+    height: number;
     marginWidth: number;
+    marginHeight: number;
     constructor(row: Object) {
         this.width = row['width'] || 80;
         this.marginWidth = row['marginWidth'] || 30;
+        this.height = row['height'] || 120;
+        this.marginHeight = row['marginHeight'] || 45;
     }
 }
 

@@ -1,8 +1,8 @@
-import { Component, OnInit, Output } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { DiagramsSettingsService } from '@settings/diagrams.settings.service';
-import { IDiagramSettings } from '@settings/IDiagramSettings';
 import { DiagramService, DiagramDetail } from '@services/diagrams';
+import { DiagramSketch } from '@services/sketch';
 
 @Component({
     selector: 'app-diagram',
@@ -12,12 +12,10 @@ import { DiagramService, DiagramDetail } from '@services/diagrams';
 export class DiagramComponent implements OnInit {
 
     id: number;
-    settings: IDiagramSettings;
     diagram: DiagramDetail;
 
     constructor(
         private route: ActivatedRoute,
-        private router: Router,
         private settingService: DiagramsSettingsService,
         private service: DiagramService
     ) { 
@@ -26,9 +24,7 @@ export class DiagramComponent implements OnInit {
     ngOnInit() {
         this.route.paramMap.subscribe(params => {
             const diagramId: number = parseInt(params.get('id'));
-            this.settingService.getSettings().subscribe(settings => {
-                this.settings = settings;
-                console.log(settings);
+            this.settingService.loadSettings().subscribe(settings => {
                 this.loadDiagram(diagramId);
             });
           });
@@ -38,8 +34,11 @@ export class DiagramComponent implements OnInit {
         this.service.getDiagram(id).subscribe( d => {
             this.id = id;
             this.diagram = d;
-            console.log(this.diagram);
+            console.log('Diagram to component', this.diagram);
         });
     }
 
+    get sketch() {
+        return this.diagram ? this.diagram.sketch: {};
+    }
 }

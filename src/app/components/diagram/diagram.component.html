@@ -1,2 +1,5 @@
 <app-diagram-list></app-diagram-list>
-<h2>Diagram</h2><small>{{id}}</small>
+<h2>Diagram</h2>
+<div ng-if="diagram">
+    <svg [attr.height.px]="sketch.height" [attr.width.px]="sketch.width"></svg>
+</div>
