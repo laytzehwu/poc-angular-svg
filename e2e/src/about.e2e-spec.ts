@@ -1,14 +1,14 @@
-import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import { AboutPage } from "./about.po";
+import { browser, logging, by } from 'protractor';
 
-describe('Diagram PoC App', () => {
-    let page: AppPage;
+describe('About page', () => {
+    let page: AboutPage;
 
     beforeEach(() => {
-        page = new AppPage();
+        page = new AboutPage();
     });
-    
-    it('should display about by default', () => {
+
+    it('should show its page', () => {
         page.navigateTo();
         expect(page.getTitleText()).toEqual('Prototype for SVG');
         expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'about');
@@ -18,7 +18,16 @@ describe('Diagram PoC App', () => {
             expect(items[1].getText()).toBe('Diagram');
         });
     });
-    
+
+    it('forward to diagram pages', () => {
+        page.navigateTo();
+        page.getDiagramLink().click().then(() => {
+            expect(
+                browser.findElement(by.css('app-diagram-list h2')).getText()
+            ).toBe('Available diagrams');
+        });
+    });
+
     afterEach(async () => {
         // Assert that there are no errors emitted from the browser
         const logs = await browser.manage().logs().get(logging.Type.BROWSER);
